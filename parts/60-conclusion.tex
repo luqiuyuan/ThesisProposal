@@ -1,0 +1,54 @@
+%======================================================================
+\chapter{Conclusion}
+\label{chap:c}
+%======================================================================
+
+Augmented reality is an emerging direction in industry and research, which has a broad use in various fields, e.g. games, communication, medicine and training. We focus on the use of it in the area of training in this proposal. Manufactures, such as Boeing and BMW, have already leveraged the advantages of augmented reality in their training department. Great improvements have been made by using AR compared with traditional resorts.
+
+However, there are two main disadvantages with the existing AR training systems. On one hand, most of existing methods generally guide the user through a fixed series of steps and the digital content is prepared beforehand. On the other hand, during the training, the trainers cannot collect feedbacks from the the trainees. 
+
+To solve the two disadvantages, we propose a framework for augmented reality training. It contains two essentials: a) an real-time object pose tracking system that tracks the translations and orientations of multiple objects, b) a remote rendering system that delivers high quality 3D rendering in real-time.
+
+In this proposal, we present three works:
+
+\begin{itemize}
+  \item
+  a method for extracting foreground objects from video and its application to content-aware video compression
+  \item
+  a remote rendering method that minimizes the bandwidth and computing power
+  \item
+  an augmented reality training framework that enables the trainers to provide instructions to the trainees remotely and collect feedback, in real-time
+\end{itemize}
+
+The method for extracting foreground objects from videos is presented in Section~\ref{chap:vos}, which is used in the real-time object pose tracking system.
+The proposed method is fully automatic, fast, and does not make restrictive assumptions about object motions.
+In experiments on standard data sets, the proposed approach achieves comparable results to state-of-the-art video object segmentation methods but our method is much faster.
+It is an essential building block in an real-time object pose tracking system.
+We also demonstrate an application of the proposed method to content-aware video compression.
+
+The second work, hybrid remote rendering method, is resented in Section~\ref{chap:hrr}.
+Although the field of remote rendering has been studied for decades and the implementations have been used in many areas, such as gaming and virtual tour, researchers primarily focused on remote rendering of the entire frame.
+We pay attention on the importance of models. In another word, we render object with higher importance with high-resolution models, and render objects with lower importance with low-resolution models.
+This flexibility gives the remote rendering system a better adaptability to various network environments and device capacities, which empowers our AR training system to adapt real production scenarios.
+
+The remaining work is described in Section~\ref{chap:rrtar}.
+It depicts the overall structure of the framework, the communication design and the pose estimation of multiple objects.
+We have two main design objectives: a) trainers should be able to guide trainees in an manufacture or assembly task in real time, b) trainers should be able to collect feedback from trainees in real time.
+To achieve the design objectives, we use a client-server structure in our framework.
+There are two types of clients in our system: a) trainer, b) trainee. On the client side, we use AR glasses or mobile devices to capture videos of the environment.
+The captured videos are sent to the server that is responsible for 3D object pose estimation and rendering.
+The two design objectives are also main advantages of our proposed framework over existing AR training system.
+
+\section{Schedule}
+
+The following schedule is given in terms of the estimated time required following the completion of this proposal.
+
+\textbf{Sept. 2017 (1 month)} Finish and submit the paper on hybrid remote rendering.
+
+\textbf{Oct. 2017 to Nov. 2017 (2 months)} Finish Pose Estimation of Multiple Objects.
+
+\textbf{Dec. 2017 to Jan. 2018 (2 months)} Finish the designed Communication Schema and the implementation of our proposed system.
+
+\textbf{Feb. 2018 to Apr. 2018 (3 months)} Finish evaluating our proposed system.
+
+\textbf{May 2018 to Aug. 2018 (4 month)} Finishing writing thesis.

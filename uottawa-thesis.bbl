@@ -1,0 +1,459 @@
+\begin{thebibliography}{10}
+
+\bibitem{achanta2012}
+R.~Achanta, A.~Shaji, K.~Smith, A.~Lucchi, P.~Fua, and S.~Susstrunk.
+\newblock Slic superpixels compared to state-of-the-art superpixel methods.
+\newblock {\em {IEEE} Trans. Pattern Anal. Mach. Intell.}, 34(11):2274--2281,
+  2012.
+
+\bibitem{anderson2013}
+Fraser Anderson, Tovi Grossman1, Justin Matejka1, and George Fitzmaurice1.
+\newblock Youmove: Enhancing movement training with an augmented reality
+  mirror.
+\newblock In {\em ACM User Interface Software and Technology Symposium},
+  October 2013.
+
+\bibitem{beigbeder2004}
+T.~Beigbeder, R.~Coughlan, C.~Lusher, J.~Plunkett, E.~Agu, and M.~Claypool.
+\newblock The effects of loss and latency on user performance in unreal
+  tournament 2003.
+\newblock In {\em Proceedings of NetGames?04}, pages 144--151, 2004.
+
+\bibitem{billinghurst2001}
+M.~Billinghurst, H.~Kato, and I.~Poupyrev.
+\newblock The magicbook - moving seamlessly between reality and virtuality.
+\newblock {\em IEEE Computer Graphics and Applications}, 21(3):6--8, May 2001.
+
+\bibitem{billinghurst2002}
+Mark Billinghurst and Hirokazu Kato.
+\newblock Collaborative augmented reality.
+\newblock {\em Commun. ACM}, 45(7):64--70, July 2002.
+
+\bibitem{boukerche2006}
+A.~Boukerche and R.~W.~N. Pazzi.
+\newblock Remote rendering and streaming of progressive panoramas for mobile
+  devices.
+\newblock In {\em Proceedings of the 14th Annual ACM International Conference
+  on Multimedia (Multimedia?06)}, pages 691--694, 2006.
+
+\bibitem{boykov2004}
+Y.~Boykov and V.~Kolmogorov.
+\newblock An experimental comparison of min-cut/max-flow algorithms forenergy
+  minimization in vision.
+\newblock {\em {IEEE} Trans. Pattern Anal. Mach. Intell.}, 26(9):1124--1137,
+  September 2004.
+
+\bibitem{brox2010}
+Thomas Brox and Jitendra Malik.
+\newblock Object segmentation by long term analysis of point trajectories.
+\newblock In {\em Europ. Conf. Comput. Vis.}, pages 282--295, September 2010.
+
+\bibitem{caudell1992}
+T.~P. Caudell and D.~W. Mizell.
+\newblock Augmented reality: an application of heads-up display technology to
+  manual manufacturing processes.
+\newblock In {\em Proceedings of the Twenty-Fifth Hawaii International
+  Conference on System Sciences}, volume~ii, pages 659--669 vol.2, Jan 1992.
+
+\bibitem{chang2002}
+C.-F. Chang and S.-H. Ger.
+\newblock Enhancing 3d graphics on mobile devices by image-based rendering.
+\newblock In {\em In Proceedings of the 3rd IEEE Pacific Rim Conference on
+  Multimedia: Advances in Multimedia Infor- mation Processing (PCM?02)}, 2002.
+
+\bibitem{Chen2015}
+C.~Chen, J.~Cai, W.~Lin, and G.~Shi.
+\newblock Incremental low-rank and sparse decomposition for compressing videos
+  captured by fixed cameras.
+\newblock {\em Vis. Comm. and Image Rep.}, 26:338--348, 2015.
+
+\bibitem{chen1995}
+Shenchange~Eric Chen.
+\newblock Quicktime vr: an image-based approach to virtual environment
+  navigation.
+\newblock In {\em SIGGRAPH '95 Proceedings of the 22nd annual conference on
+  Computer graphics and interactive techniques}, 1995.
+
+\bibitem{colombari2007}
+A.~Colombari, A.~Fusiello, , and V.~Murino.
+\newblock Segmentation and tracking of multiple video objects.
+\newblock {\em Pattern Recognition}, 40(4):1307--1317, 2007.
+
+\bibitem{crescenzio2011}
+F.~De Crescenzio, M.~Fantini, F.~Persiani, L.~Di Stefano, P.~Azzari, and
+  S.~Salti.
+\newblock Augmented reality for aircraft maintenance training and operations
+  support.
+\newblock {\em IEEE Computer Graphics and Applications}, 31(1):96--101, Jan
+  2011.
+
+\bibitem{cremers2007}
+R.~Deriche D.~Cremers, M.~Rousson.
+\newblock A review of statistical approaches to level set segmentation.
+\newblock {\em Integrating color, texture, motion and shape. Int. J. Comput.
+  Vision}, 72:195--215, 2007.
+
+\bibitem{dahan2011}
+Meir~Johnathan Dahan, Nir Chen, Ariel Shamir, and Daniel Cohen-Or.
+\newblock Combining color and depth for enhanced image segmentation and
+  retargeting.
+\newblock {\em The Vis. Comput.}, 28(12):1181--1193, 2012.
+
+\bibitem{dambreville2010}
+S.~Dambreville, R.~Sandhu, A.~Yezzi, and A.~Tannenbaum.
+\newblock A geometric approach to joint 2d region-based segmentation and 3d
+  pose estimation using a 3d shape prior.
+\newblock {\em SIAM J. Img. Sci.}, 3:110--132, 2010.
+
+\bibitem{decombas2012}
+M.~Decombas, E.~Renan, F.~Capman, F.~Dufaux, and B.~Pesquet-Popescu.
+\newblock Closed loop seams approximation for video compression.
+\newblock In {\em Proc. {IEEE} Int. Symp. signal, Image, Video, Commun.}, July
+  2012.
+
+\bibitem{endres2010}
+Ian Endres and Derek Hoiem.
+\newblock Category independent object proposals.
+\newblock In {\em Europ. Conf. Comput. Vis.}, pages 575--588, September 2010.
+
+\bibitem{freitas2008}
+Rubina Freitas and Pedro Campos.
+\newblock Smart: A system of augmented reality for teaching 2nd grade students.
+\newblock In {\em Proceedings of the 22Nd British HCI Group Annual Conference
+  on People and Computers: Culture, Creativity, Interaction - Volume 2},
+  BCS-HCI '08, pages 27--30, Swindon, UK, 2008. BCS Learning \& Development
+  Ltd.
+
+\bibitem{gavish2015}
+Nirit Gavish, Teresa GutiÃ©rrez, Sabine Webel, Jorge RodrÃ­guez, Matteo Peveri,
+  Uli Bockholt, and Franco Tecchia.
+\newblock Evaluating virtual reality and augmented reality training for
+  industrial maintenance and assembly tasks.
+\newblock {\em Interactive Learning Environments}, 23(6):778--798, 2015.
+
+\bibitem{gonzalez-franco2016}
+Mar Gonz{\'{a}}lez{-}Franco, Julio Cermeron, Katie Li, Rodrigo Pizarro, Jacob
+  Thorn, Paul Hannah, Windo Hutabarat, Ashutosh Tiwari, and Pablo
+  Bermell{-}Garcia.
+\newblock Immersive augmented reality training for complex manufacturing
+  scenarios.
+\newblock {\em CoRR}, abs/1602.01944, 2016.
+
+\bibitem{gosselin2010}
+Florian Gosselin, Fabien Ferlay, Sylvain Bouchigny, Christine M{\'e}gard, and
+  Farid Taha.
+\newblock {\em Design of a Multimodal VR Platform for the Training of Surgery
+  Skills}, pages 109--116.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2010.
+
+\bibitem{graciela2013}
+RamÃ­rez~A. Graciela and ChacÃ³n M.~Mario I.
+\newblock New trends on dynamic object segmentation in video sequences: A
+  survey.
+\newblock {\em RIEE\&C}, 11(1):29--42, 2013.
+
+\bibitem{greig1989}
+D.~M. Greig, B.~T. Porteous, and A.~H. Seheult.
+\newblock Exact maximum a posteriori estimation for binary images.
+\newblock {\em J. Royal Statis. Soc. Series B}, 51(2):271--279, 1989.
+
+\bibitem{harris1990}
+C.~Harris and C.~Stennet.
+\newblock Rapid ? a video-rate object tracker.
+\newblock In {\em British Machine Vision Conference}, September 1990.
+
+\bibitem{henderson2009}
+S.~J. Henderson and S.~Feiner.
+\newblock Evaluating the benefits of augmented reality for task localization in
+  maintenance of an armored personnel carrier turret.
+\newblock In {\em 2009 8th IEEE International Symposium on Mixed and Augmented
+  Reality}, pages 135--144, Oct 2009.
+
+\bibitem{hincapie2011}
+Mauricio Hincapié, Andrea Caponio, Horacio Rios, and Eduardo~González Mendívil.
+\newblock An introduction to augmented reality with applications in
+  aeronautical maintenance.
+\newblock In {\em Transparent Optical Networks (ICTON), 2011 13th International
+  Conference on}, June 2011.
+
+\bibitem{jain1979}
+Ramesh Jain and H.-H. Nagel.
+\newblock On the analysis of accumulative difference pictures from image
+  sequences of real world scenes.
+\newblock {\em {IEEE} Trans. Pattern Anal. Mach. Intell.}, PAMI-1(2):206--214,
+  April 1979.
+
+\bibitem{johnson2010}
+L.~Johnson, A.~Levine, R.~Smith, and S.~Stone.
+\newblock Simple augmented reality.
+\newblock {\em 2010 Horizon Report}, 211:250--255, 2010.
+
+\bibitem{kaewtrakulpong2002}
+P.~KaewTraKulPong and R.~Bowden.
+\newblock An improved adaptive background mixture model for real-time tracking
+  with shadow detection.
+\newblock In {\em Proc. Europ. Workshop Adv. Video Based Surveillance Syst.
+  ({AVBS} '01)}, pages 135--144, September 2001.
+
+\bibitem{kim2010}
+K.~Kim, V.~Lepetit, and W.~Woo.
+\newblock Keyframe-based modeling and tracking of multiple 3d objects.
+\newblock In {\em ISMAR 2010. 9th IEEE International Symposium on}, pages
+  193--198, October 2010.
+
+\bibitem{lamberti2007}
+F.~Lamberti and A.~Sanna.
+\newblock A streaming-based solution for remote visualization of 3d graphics on
+  mobile devices.
+\newblock {\em IEEE Trans. Vis. Comput. Graph}, 13:247--260, 2007.
+
+\bibitem{leblanc2010}
+Fabien Leblanc, Bradley~J Champagne, Knut~M Augestad, Paul~C Neary, Anthony~J
+  Senagore, Clyde~N Ellis, Conor~P Delaney, and the Colorectal Surgery
+  Training~Group.
+\newblock A comparison of human cadaver and augmented reality simulator models
+  for straight laparoscopic colorectal skills acquisition training.
+\newblock {\em J Am Coll Surg}, pages 21--24, 2010.
+
+\bibitem{lee2012}
+Kangdon Lee.
+\newblock Augmented reality in education and training.
+\newblock {\em TechTrends}, 56(2):13--21, Mar 2012.
+
+\bibitem{lee2011}
+Y.~J. Lee, J.~Kim, and K.~Grauman.
+\newblock Key-segments for video object segmentation.
+\newblock In {\em {IEEE} Int. Conf. Comput. Vis.}, November 2011.
+
+\bibitem{levoy1995}
+Marc Levoy.
+\newblock Polygon-assisted jpeg and mpeg compression of synthetic images.
+\newblock In {\em Proceedings of the 22nd Annual Conference on Computer
+  Graphics and Interactive Techniques (SIGGRAPH ?95)}, pages 21--28, 1995.
+
+\bibitem{f-li2013}
+Fuxin Li, Taeyoung Kim, Ahmad Humayun, David Tsai, and James~M. Rehg.
+\newblock Video segmentation by tracking many figure-ground segments.
+\newblock In {\em {IEEE} Int. Conf. Comput. Vis.}, pages 2192--2199, June 2013.
+
+\bibitem{li2010}
+Y.~Li, E.~Adelson, and A.~Agarwala.
+\newblock Instant propagation of sparse edits on images and videos.
+\newblock {\em Comput. Graphics Forum}, 29(7):2049--2054, 2010.
+
+\bibitem{liu2014}
+Yao Liu, Shaoxuan Wang, and Sujit Dey.
+\newblock Content-aware modeling and enhancing user experience in cloud mobile
+  rendering and streaming.
+\newblock {\em IEEE J. on Emerging and Selected Topics in Circuits and
+  Systems}, 4:43--56, March 2014.
+
+\bibitem{lu2011}
+Yan Lu, Shipeng Li, and Huifeng Shen.
+\newblock Virtualized screen: A third element for cloud- mobile convergence.
+\newblock {\em IEEE MultiMedia}, 18:4--11, April 2011.
+
+\bibitem{luo2005}
+Xun Luo, R.~V. Kenyon, T.~Kline, H.~C. Waldinger, and D.~G. Kamper.
+\newblock An augmented reality training environment for post-stroke finger
+  extension rehabilitation.
+\newblock In {\em 9th International Conference on Rehabilitation Robotics,
+  2005. ICORR 2005.}, pages 329--332, June 2005.
+
+\bibitem{ma2012}
+Tianyang Ma and L.J. Lateck.
+\newblock Maximum weight cliques with mutex constraints for video object
+  segmentation.
+\newblock In {\em {IEEE} Conf. Comput. Vis. Pattern Recogn.}, pages 670--677,
+  June 2012.
+
+\bibitem{nakajima2003}
+C.~Nakajima and N.~Itho.
+\newblock A support system for maintenance training by augmented reality.
+\newblock In {\em 12th International Conference on Image Analysis and
+  Processing, 2003.Proceedings.}, pages 158--163, Sept 2003.
+
+\bibitem{nishino2011}
+Hiroaki Nishino, Kouta Murayama, Kazuya Shuto, Tsuneo Kagawa, and Kouichi
+  Utsumiya.
+\newblock A calligraphy training system based on skill acquisition through
+  haptization.
+\newblock {\em Journal of Ambient Intelligence and Humanized Computing},
+  2(4):271--284, Dec 2011.
+
+\bibitem{ochs2011}
+P.~Ochs and T.~Brox.
+\newblock Object segmentation in video: a hierarchical variational approach for
+  turning point trajectories into dense regions.
+\newblock In {\em {IEEE} Int. Conf. Comput. Vis.}, November 2011.
+
+\bibitem{papazoglou2013}
+Anestis Papazoglou and Vittorio Ferrari.
+\newblock Fast object segmentation in unconstrained video.
+\newblock In {\em {IEEE} Int. Conf. Comput. Vis.}, pages 1777--1784, 2013.
+
+\bibitem{park2008}
+Y.~Park, V.~Lepetit, and W.~Woo.
+\newblock Multiple 3d object tracking for augmented reality. in: Mixed and
+  augmented reality.
+\newblock In {\em ISMAR 2008. 7th IEEE/ACM Interna- tional Symposium on.},
+  pages 117--120, September 2008.
+
+\bibitem{ochs2012}
+P.Ochs and T.Brox.
+\newblock Higher order motion models and spectral clustering.
+\newblock In {\em {IEEE} Conf. Comput. Vis. Pattern Recogn.}, pages 614--621,
+  June 2012.
+
+\bibitem{prisacariu2015}
+V.~Prisacariu, O.~Kahler, D.~Murray, and I.~Reid.
+\newblock Real-time 3d tracking and recon- struction on mobile phones.
+\newblock {\em IEEE Transactions on Visualization and Computer Graphics},
+  21:557--570, 2015.
+
+\bibitem{prisacariu2012}
+V.A. Prisacariu and I.D. Reid.
+\newblock Pwp3d: Real-time segmentation and tracking of 3d objects.
+\newblock {\em Int. J. Comput. Vision}, 98:335--354, 2012.
+
+\bibitem{regenbrecht2005}
+H.~Regenbrecht, G.~Baratoff, and W.~Wilke.
+\newblock Augmented reality projects in the automotive and aerospace
+  industries.
+\newblock {\em IEEE Computer Graphics and Applications}, 25(6):48--56, Nov
+  2005.
+
+\bibitem{schrier2005}
+K.~L. Schrier.
+\newblock Revolutionizing history education: using augmented reality games to
+  teach histories.
+\newblock Master's thesis, Massachusetts Institute of Technology.
+
+\bibitem{shi2012}
+S.~Shi, K.~Nahrstedt, and R.~Campbell.
+\newblock A real-time remote rendering system for interactive mobile graphics.
+\newblock {\em ACM Trans. Multimedia Comput., Commun., Appl. (TOMCCAP)},
+  8(46):43--56, 2012.
+
+\bibitem{shi2015}
+Shu Shi and Cheng-Hsin Hsu.
+\newblock A survey of interactive remote rendering systems.
+\newblock {\em ACM Computing Surveys (CSUR)}, 47:57, July 2015.
+
+\bibitem{siva2014}
+Parthipan Siva and Alexander Wong.
+\newblock Grid seams: A fast superpixel algorithm for real-time applications.
+\newblock In {\em Canadian Conf. Comput. Robot Vis.}, pages 127--134, 2014.
+
+\bibitem{sklansky1982}
+Jack Sklansky.
+\newblock Finding the convex hull of a simple polygon.
+\newblock {\em Pattern Recogn. Lett.}, 1(2):79--83, December 1982.
+
+\bibitem{sobral2014}
+Andrews Sobrala and Antoine Vacavant.
+\newblock A comprehensive review of background subtraction algorithms evaluated
+  with synthetic and real videos.
+\newblock {\em Comput. Vis. Image Understanding}, 122:4--21, 2014.
+
+\bibitem{sutherland1968}
+Ivan~E. Sutherland.
+\newblock A head-mounted three dimensional display.
+\newblock In {\em Proceedings of the December 9-11, 1968, Fall Joint Computer
+  Conference, Part I}, AFIPS '68 (Fall, part I), pages 757--764, New York, NY,
+  USA, 1968. ACM.
+
+\bibitem{suzuki1985}
+Satoshi Suzuki and Keiichi Abe.
+\newblock Topological structural analysis of digitized binary images by border
+  following.
+\newblock {\em Comput. Vision Graphics Image Process.}, 30(1):32--46, 1985.
+
+\bibitem{tao2012}
+M.~W. Tao and A.~Krishnaswamy.
+\newblock Fast adaptive edge-aware mask generation.
+\newblock In {\em Proc. Graphics Interface}, pages 77--83, 2012.
+
+\bibitem{taylor2015}
+B.~Taylor, V.~Karasev, and S.~Soatto.
+\newblock Causal video object segmentation from persistence of occlusions.
+\newblock In {\em {IEEE} Conf. Comput. Vis. Pattern Recogn.}, June 2015.
+
+\bibitem{tjaden2016}
+Henning Tjaden, Ulrich Schwanecke, and Elmar Schömer.
+\newblock Real-time monocular segmentation and pose tracking of multiple
+  objects.
+\newblock In {\em Europ. Conf. Comput. Vis.}, September 2016.
+
+\bibitem{vacchetti2004}
+L.~Vacchetti, V.~Lepetit, and P.~Fua.
+\newblock Stable real-time 3d tracking using online and offline information.
+\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 26:1385--1391, 2004.
+
+\bibitem{wang2010}
+Ming-Jen Wang, Chien-Hao Tseng, and Cherng-Yeu Shen.
+\newblock {\em An Easy to Use Augmented Reality Authoring Tool for Use in
+  Examination Purpose}, pages 285--288.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2010.
+
+\bibitem{wang2012}
+S.~Wang, J.~Fu, Y.~Lu, S.~Li, and W.M. Gao.
+\newblock Content-aware layered compound video compression.
+\newblock In {\em Circuits and Systems (ISCAS)}, May 2012.
+
+\bibitem{wang2015}
+Wenguan Wang, Jianbing Shen, and Fatih Porikli.
+\newblock Saliency-aware geodesic video object segmentation.
+\newblock In {\em {IEEE} Conf. Comput. Vis. Pattern Recogn.}, pages 3395--3402,
+  June 2015.
+
+\bibitem{webel2013}
+Sabine Webel, Uli Bockholt, Timo Engelke, Nirit Gavish, Manuel Olbrich, and
+  Carsten Preusche.
+\newblock An augmented reality training platform for assembly and maintenance
+  skills.
+\newblock {\em Robotics and Autonomous Systems}, 61(4):398 -- 403, 2013.
+\newblock Models and Technologies for Multi-modal Skill Training.
+
+\bibitem{webel2011}
+Sabine Webel, Ulrich Bockholt, Timo Engelke, Matteo Peveri, Manuel Olbrich, and
+  Carsten Preusche.
+\newblock Augmented reality training for assembly and maintenance skills.
+\newblock In {\em The International Conference SKILLS 2011}, December 2011.
+
+\bibitem{yuen2011}
+Steve Chi-Yin Yuen, Gallayanee Yaoyuneyong, and Erik Johnson.
+\newblock Augmented reality: An overview and five directions for ar in
+  education.
+\newblock {\em Journal of Educational Technology Development \& Exchange},
+  4:119--140, 2011.
+
+\bibitem{zeng2007}
+Hui{-}Chi Zeng and Shang{-}Hong Lai.
+\newblock Adaptive foreground object extraction for real-time video
+  surveillance with lighting variations.
+\newblock In {\em Proc. {IEEE} Int. Conf. Acoust., Speech, Signal Process.},
+  pages 1201--1204, April 2007.
+
+\bibitem{zhang2013}
+Dong Zhang, Omar Javed, and Mubarak Shah.
+\newblock Video object segmentation through spatially accurate and temporally
+  dense extraction of primary object regions.
+\newblock In {\em {IEEE} Conf. Comput. Vis. Pattern Recogn.}, pages 628--635,
+  June 2013.
+
+\bibitem{zhou2008}
+Feng Zhou, Henry Been-Lirn Duh, and Mark Billinghurst.
+\newblock Trends in augmented reality tracking, interaction and display: A
+  review of ten years of ismar.
+\newblock In {\em Proceedings of the 7th IEEE/ACM International Symposium on
+  Mixed and Augmented Reality}, ISMAR '08, pages 193--202, Washington, DC, USA,
+  2008. IEEE Computer Society.
+
+\bibitem{zivkovic2004}
+Zoran Zivkovic.
+\newblock Improved adaptive gaussian mixture model for background subtraction.
+\newblock In {\em Proc. 17th Int. Conf. Pattern Recogn.}, pages 28--31, August
+  2004.
+
+\end{thebibliography}
