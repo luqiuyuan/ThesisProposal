@@ -5,6 +5,16 @@
 
 \section{Method}
 
+We propose a remote rendering system that minimizes the network bandwidth requirements and the network latency in remote rendering.
+Our approach is a client-server architecture and maintains two versions of models: low-fidelity models and high-fidelity models.
+Low and high fidelity models differ in the number of polygons and in rendering quality.
+
+On the client side, the mobile device renders low-fidelity models that have less polygons, lower fidelity of textures and lower quality rendering effects, while on the server side, the workstation renders high-fidelity models that have more polygons, higher fidelity of textures and higher quality rendering effects. Hence key models are rendered on the server and captured in images which are sent to the client as a video stream. We define key models as those that are important to the application. The models that the user is interacting with can be identified from interaction information sent to the server, while the models that are important to the application are specified in advance by the application developers.
+
+This architecture is able to reduce required network bandwidth and latency in user interactions.
+Since only the regions of interest of the entire frame are encoded and streamed to the clients, while the rest is discarded, it reduces the bit rate of the encoded video stream.
+The user interaction latency is composed of three components: rendering, encoding and network transmission. Our proposed method aims at reducing the rendering time by only rendering and encoding the key models in high-fidelity mode and rendering the rest in low-fidelity mode without encoding.
+
 \subsection{Client-Server Prototype Design}
 
 The proposed system aims at providing high-quality rendering on less powerful mobile devices, while minimizing the amount of data transferred via network.

@@ -4,22 +4,26 @@
 \begin{center}\textbf{Abstract}\end{center}
 
 In this thesis proposal, we aim to develop an Augmented Reality (AR) framework for training scenarios.
-Compared with existing augmented reality applications, our proposed framework has three advantages: 1) Existing methods generally guide the trainee through a fixed series of steps, while our proposed method acts as an interactive system between the trainer and the trainee; 2) it does not need markers to estimate the environment; 3) the proposed approach is compatible with commercial equipments that have less powerful graphics capacity.
+Compared with existing augmented reality applications, our proposed framework has three advantages: 1) Existing methods typically guide the trainee through a fixed series of steps, while the proposed method acts as an interactive system between the trainer and the trainee; 2) it does not need markers to estimate the environment; 3) the proposed approach is compatible with commercial equipments that have less powerful graphics capacity and various network conditions.
 
 Three sub-goals constitute our final goal.
 The first sub-goal is a video object segmentation algorithm.
 We present a method for extracting foreground objects from video and its application to content-aware video compression. Our method uses trimaps inferred from background subtraction to represent the foreground-background relationship. The appearance of foreground and background are modeled with Radial Basis Functions initialized from the background substraction step. Finally, Graph Cuts are used to compute a binary mask. Our method is fully automatic, fast, and does not make restrictive assumptions about object motions. In experiments on standard data sets, the proposed approach achieves comparable results to state-of-the-art video object segmentation methods but our method is much faster. We also demonstrate an application of the proposed method to content-aware video compression.
 With this algorithm, we are able to leverage an existing 3D object pose estimation algorithm to perform a markerless environment estimation.
 
-The second sub-goal is a remote rendering method that minimizes the bandwidth and computing power. This method is inspired by existing remote rendering approaches but is specially optimized for mobile devices and training scenarios.
-It adopts a client-server model, where the server is responsible for rendering high-fidelity models, encoding the rendering results and sending them to the client, while the client renders low-fidelity models and overlay the high-fidelity frames received from the server on its rendering results.
-With this configuration, the client is able to keep functioning regardless of network condition and bandwidth.
-Moreover, to minimize the bandwidth requirement, only those models of interest are rendered in high-fidelity mode.
+Given the rapid evolution of mobile devices in terms of both hardware and software, most of recent AR applications target in mobile devices, such as mobile phones and AR glasses.
+The second sub-goal is a hybrid remote rendering method optimized for mobile devices, which minimizes bandwidth requirement and interaction latency. To incorporate it into the AR proposed framework that targets in training scenarios, the hybrid remote rendering method is also able to support multi-client cooperation.
+It adopts a client-server architecture and maintains two versions of models: low-fidelity models and high-fidelity models. Low and high fidelity models differ in the number of polygons and in rendering quality.
+On the one hand, the low-fidelity models are stored on the client side and the local rendering capacity is leveraged to produce lower quality rendering results. On the other hand, the high-fidelity rendering results of key models are sent from the server to the client and overlaid upon the locally rendered frames.
+We define key models as those that are important to the application.
+The models that the user is interacting with can be identified from interaction information sent to the server, while the models that are important to the application are specified in advance by the application developers.
+We also conducted a user study to identify the effects that the proposed method has on user object recognition and quality of experience.
 
 Finally, the last sub-goal is to combine the former two to develop an augmented reality framework.
 It acts as a bridge between the trainer and the trainee when they are in different geometrical locations and is able to leverage the recently emerged augmented reality glasses or mobile devices.
 Client-server pattern is used in this system. There are two types of clients in our system: a) trainer, b) trainee.
 Both of the trainer and the trainee use AR glasses or mobile devices to capture videos of the environment.
+% wording: it should be markerless instead of marker-less
 Then the videos captured are sent to the server that uses the proposed video object segmentation algorithm combined with a markerless 3D object pose estimation method to calculate the pose of all the objects of interest.
 Moving objects are rendered and the frames are sent to the clients and overlaid on the real scenes, i.e. any objects moved by the trainer will be rendered and sent to the trainee, and, similarly, any objects moved by the trainee are rendered and sent to the trainer.
 During this course, the remote trainer guide the trainee through the real time operations and collect their operations, then the trainer is able to give customized feedbacks to each trainee, which is how the learning actually takes place.

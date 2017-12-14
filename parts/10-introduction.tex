@@ -48,39 +48,25 @@ It is the process of separating foreground objects from the background in a vide
 A variety of methods have been proposed to address the task~\cite{papazoglou2013,ma2012,wang2015,brox2010,taylor2015}. Most methods use motion cues to initialize the object segmentation.
 A common method for motion detection is  background subtraction with mixture of Gaussians~\cite{kaewtrakulpong2002,zivkovic2004}. This technique models each pixel indepedently as a mixture of Gaussians 
 % and updates the model with an online approximation method. 
-but as it detects motion in each frame independently, the results lack completeness and temporal persistence. 
-
-%from related work
+but as it detects motion in each frame independently, the results lack completeness and temporal persistence.
 
 \subsection{Remote Rendering}
 
-With the rapid progress of mobile devices in terms of both hardware and software, products have leveraged the advantages. Those areas include games, training, medicine and many other applications in everyday life.
-Moreover, mobile devices have wider availability than PCs and offer more intuitive interaction experience than PCs. Instead of keyboards and mice, users use gestures to interact with applications.
-However, complex 3D models demand high-end computing hardware. Compared with PCs, mobile devices have much lower processing capacity, limited storage and less powerful rendering hardware, even for most recent high-end devices. Developing mobile applications, especially 3D graphics applications, often requires simplification of the 3D models, so that it degrades rendering quality.
-Computation intensive 3D graphics rendering tasks also impose severe challenges on the limited battery capacity.
+Mobile applications for gaming, training, healthcase among others rely on the rapid evolution of mobile devices in terms of both hardware and software.
+Mobile devices offer a more intuitive interaction experience through gestures 
+compared to PCs that mostly use traditional keyboard and mouse interfaces.
+However, complex 3D models demand high-end computing hardware. Compared to PCs, mobile devices have much lower processing power, limited storage and less capable rendering hardware, even in most recent high-end mobile devices~\cite{feeney2001,ebert2002,shi2003,simunic2000}. Developing mobile applications, especially 3D graphics applications, often requires simplification of the 3D models leading to a degraded rendering quality.
+Computationally intensive 3D graphics rendering tasks further burden the onboard battery.
 
-An emerging direction to address this issues is Cloud Mobile Rendering (CMR).
-It offloads computation intensive rendering to the cloud servers, so that mobile devices are relieved of the burden of rendering.
-Basically, it when a mobile client connects to the server, the server will initialize a rendering engine and an encoder for the mobile client. The models are rendered on the server side and rendered frames are encoded and streamed from the server to the client as a raw video stream.
-Lamberti and Sanna~\cite{lamberti2007} and Lu et al.~\cite{lu2011} are examples of such CMR systems.
+One way to address the resource limitations of mobile devices is through Cloud Mobile Rendering (CMR).
+CMR offloads computationally intensive rendering to cloud servers:
+the server initializes a rendering engine and encoder to service every connected client. The models are rendered on the server side and encoded in video frames streamed from the server to the client~\cite{lamberti2007,lu2011,ma2017,chang2004,simoens2012}.
 
-However, the CMR systems often suffer from very high network bandwidth requirement and interaction latency.
-For decades, a lot of attempts have been made to reduce bandwidth requirement and interaction.
-Boukerche and Pazzi~\cite{boukerche2006} use environment map in CMR. The server renders an environment map and sends it to the client. With the environment map, the client is able to respond to the user interaction in terms of pan and tilt without latency.
-Shi et al.~\cite{shi2012} proposed a framework that leverages depth maps to reduce user interaction latency. It takes advantage of 3D image warping, to synthesize the mobile display from the depth images generated on the server.
-However, the image-based rendering techniques have a disadvantage that they assume static scenes and only support limited user interactions.
-For example Boukerche and Pazzi~\cite{boukerche2006} use environment map to accelerate panning interaction, but for translation, a new environment map needs to be generated, which increases interaction delay and bandwidth requirement.
-Moreover, when scene change, environment maps and depth maps also need to be re-generated.
-
-This paper proposes a remote rendering system that aims at minimizing the network bandwidth requirement for remote rendering and the network latency.
-It has a client-server architecture and maintains two versions of models: low-fidelity models and high-fidelity models.
-The differences between two versions of models are in three aspects: a) number of polygons, b) resolution of textures and c) rendering effects.
-
-On the client side, the mobile device runs with low-fidelity models that have less polygons, lower resolution of textures and lower rendering effect quality, while on the server side, the work station runs with high-fidelity models that have more polygons, higher resolution of textures and higher rendering effect quality. Depending on which models that need to be rendered in high-fidelity (key models), the server renders them and send the frames as a video stream. We define key models twofold: models that the user is interacting with are key models, and models that have importance are key models. The models that the user is interacting with can be identified by interaction information sent to the server, while the models that have importance are specified in advance.
-
-This architecture is able to reduce network bandwidth requirement and user interaction latency.
-Because only the regions of interest of the entire frame are encoded and streamed to the clients, while the rest is discarded, it will reduce the bit rate of encoded video stream.
-The user interaction latency is composed of three parts: rendering, encoding and network transmission. Our proposed method aims at reducing the rendering time by only rendering and encoding the models of interest in high-fidelity mode and rendering the rest in low-fidelity mode without encoding. We call this rendering process as two-pass rendering and will describe it in the following sections.
+However, CMR systems often require very high network bandwidth which is seldom available and suffer from interaction latency~\cite{chen2014}. However some attempts have been made to improve such systems. 
+Boukerche and Pazzi~\cite{boukerche2006} use environment maps rendered on a server and sent to the client to reduce bandwidth. The client is able to respond to user interactions resulting in panning and tilting without latency based on the environment map.
+Shi et al.~\cite{shi2012} propose a framework that leverages depth maps to reduce interaction latency. They take advantage of 3D image warping to synthesize the mobile display from the depth images generated on the server.
+However, theses two image-based rendering techniques assume static scenes and only support limited user interactions.
+For example, the use of environment maps by Boukerche and Pazzi~\cite{boukerche2006} accelerates panning interactions, but a new environment map needs to be generated for translation, which increases interaction delay and bandwidth requirements. Similarly, at scene changes, the environment maps or the depth maps also need to be regenerated in the approach proposed by Shi et al.~\cite{shi2012}.
 
 \subsection{Augmented Reality Training Framework}
 
