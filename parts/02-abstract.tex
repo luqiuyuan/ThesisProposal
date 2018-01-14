@@ -9,19 +9,17 @@ Compared with the existing augmented reality applications, our proposed framewor
 Three sub-goals constitute our final goal.
 The first sub-goal is a video object segmentation algorithm.
 We present a method for extracting foreground objects from video and its application in content-aware video compression. Our method uses trimaps inferred from background subtraction to represent the foreground-background relationship. The appearance of foreground and background are modeled with Radial Basis Functions initialized from the background substraction step. Finally, the algorithm Graph Cuts is used to compute a binary mask. Our method is fully automatic, fast, and does not make restrictive assumptions about object motions. In experiments on standard data sets, the proposed approach achieves comparable results to the state-of-the-art video object segmentation methods but our method is much faster. We also demonstrate an application of the proposed method to content-aware video compression.
+% wording: it should be markerless instead of marker-less
 With this algorithm, we are able to leverage an existing 3D object pose estimation algorithm to perform a markerless 3D structure estimation for the models and the environment in a training scenario.
 
+% This part is the abstract of the remote rendering paper with some minor changes. However, it does not mention the user study part since it is not needed here.
 Given the rapid evolution of mobile devices in terms of both hardware and software, most of recent AR applications target in mobile devices, such as mobile phones and AR glasses.
-The second sub-goal is a hybrid remote rendering method optimized for mobile devices, which minimizes network bandwidth requirement and interaction latency. To incorporate it into the proposed framework that targets at training scenarios, the hybrid remote rendering method is also able to support multi-client cooperation.
-Our approach is a client-server architecture and maintains two versions of models: low-fidelity models and high-fidelity models, where low and high fidelity models differ in the number of polygons and in rendering quality.
-On the client side, the mobile device renders low-fidelity models that have less polygons, lower fidelity of textures and lower quality rendering effects. On the server side, the workstation renders high-fidelity models that have more polygons, higher fidelity of textures and higher quality rendering effects.
-We also conducted a user study to identify the effects that the proposed method has on user object recognition and quality of experience.
+The second sub-goal is a hybrid remote rendering framework for applications on mobile devices. In our remote rendering approach, we adopt a client-server model, where the server is responsible for rendering high-fidelity models, encoding the rendering results and sending them to the client, while the client renders low-fidelity models and overlays the high-fidelity frames received from the server on its rendering results. With this configuration, the client is able to keep functioning regardless of network condition and bandwidth. Moreover, to minimize the bandwidth requirements, only key models are rendered in high-fidelity mode.
 
 Finally, the last sub-goal is to combine the former two sub-goals to develop an AR framework for training scenarios.
 It acts as a bridge between the trainer and the trainee when they are in different geometrical locations and is able to leverage the recently emerged augmented reality glasses or mobile devices.
 Client-server pattern is used in this system. There are two types of clients in our system: a) trainer, b) trainee.
 Both of the trainer and the trainee use AR glasses or mobile devices to capture videos of the environment.
-% wording: it should be markerless instead of marker-less
 Then the videos captured are sent to the server that uses the proposed video object segmentation algorithm combined with a markerless 3D object pose estimation method to calculate the pose of all the objects of interest.
 Moving objects are rendered and the frames are sent to the clients and overlaid on the real scenes, i.e. any objects moved by the trainer will be rendered and sent to the trainee, and, similarly, any objects moved by the trainee are rendered and sent to the trainer.
 During this course, the remote trainer guide the trainee through the real time operations and collect their operations, then the trainer is able to give customized feedbacks to each trainee, which is how the learning actually takes place.

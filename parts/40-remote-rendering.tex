@@ -3,11 +3,14 @@
 \label{chap:hrr}
 %======================================================================
 
+% This part is the abstract of the paper with a minor change.
+In this section, we present a hybrid remote rendering framework for applications on mobile devices. In our remote rendering approach, we adopt a client-server model, where the server is responsible for rendering high-fidelity models, encoding the rendering results and sending them to the client, while the client renders low-fidelity models and overlays the high-fidelity frames received from the server on its rendering results. With this configuration, the client is able to keep functioning regardless of network condition and bandwidth. Moreover, to minimize the bandwidth requirements, only key models are rendered in high-fidelity mode. We conduct a user study on factors that may impact the objective and subjective difficulty of an interactive task in a 3D mobile application. The results show that model fidelity has a significant influence on the objective difficulty, while network delay plays an important role in the subjective difficulty. The results of the user study explain how our method is able to benefit the users.
+
 \section{Method}
-\label{sec:method}
+\label{sec:hrr:m}
 
 \subsection{Client-Server Prototype Design}
-\label{sec:method:cspd}
+\label{sec:hrr:m:cspd}
 
 Our proposed system aims at providing high-quality rendering on less powerful mobile devices, while minimizing the amount of data transferred via the network. We would also like to enable multi-client cooperation to enhance the user experience in training scenarios.
 
@@ -68,7 +71,7 @@ Fig.~\ref{fig:c-wf} shows the behavior of the client processes. In each loop, th
 
 \subsection{Two-pass Rendering}
 
-As mentioned in Section~\ref{sec:method:cspd}, we use a two-pass rendering process on the server side.
+As mentioned in Section~\ref{sec:hrr:m:cspd}, we use a two-pass rendering process on the server side.
 The frames sent to the client depict only high-fidelity key models.
 But this is not enough for valid view of the 3D scene since other scene content may occlude parts of the key models.
 We propose a two-pass rendering process to address this issue.
@@ -106,7 +109,7 @@ Fig.~\ref{fig:c-wf} shows the behavior of the client processes. In each loop, th
 
 \subsection{Two-pass Rendering}
 
-As mentioned in Section~\ref{sec:method:cspd}, we use a two-pass rendering process on the server side.
+As mentioned in Section~\ref{sec:hrr:m:cspd}, we use a two-pass rendering process on the server side.
 The frames sent to the client depict only high-fidelity key models.
 But this is not enough for valid view of the 3D scene since other scene content may occlude parts of the key models.
 We propose a two-pass rendering process to address this issue.
@@ -120,9 +123,9 @@ We propose a two-pass rendering process to address this issue.
 As shown in Fig.~\ref{fig:tp-rendering}, in the first pass, all models are rendered in low-fidelity except for the key models. Then the color buffer is cleared and only the depth buffer is preserved. In the second pass, only the high-fidelity key models are rendered, while considering the depth information obtained from the first pass rendering, therefore the occlusions are preserved in the final rendered scene.
 
 \section{User Study}
-\label{sec:userstudy}
+\label{sec:us}
 
-In Section~\ref{sec:method}, we propose a hybrid remote rendering framework that offloads a part of the rendering task to the remote server. More specifically, only key models are rendered remotely to minimize network bandwidth requirement and network delay.
+In Section~\ref{sec:hrr:m}, we propose a hybrid remote rendering framework that offloads a part of the rendering task to the remote server. More specifically, only key models are rendered remotely to minimize network bandwidth requirement and network delay.
 
 To overcome the limitations of mobile devices in rendering high-fidelity models, designers often use one of the two approaches:
 \begin{enumerate}
@@ -148,9 +151,9 @@ Our user study was approved by the Research Ethics Board at the University of Ot
 The main user study is informed by a pre-trial study discussed next.
 
 \subsection{Pre-Trial Study}
-\label{sec:pts}
+\label{sec:hrr:us:pts}
 
-A major goal of the main study is to analyze the effect of 3D model fidelity on the DoT. However, in the proposed framework, there are two types of models, high-fidelity models and low-fidelity models. Those models will be used in the main study (see Section~\ref{sec:ms}). We have prepared 15 high-fidelity models and simplified them to obtain low-fidelity models using QSlim~\cite{garland1997}.
+A major goal of the main study is to analyze the effect of 3D model fidelity on the DoT. However, in the proposed framework, there are two types of models, high-fidelity models and low-fidelity models. Those models will be used in the main study (see Section~\ref{sec:hrr:us:ms}). We have prepared 15 high-fidelity models and simplified them to obtain low-fidelity models using QSlim~\cite{garland1997}.
 
 \subsubsection{Objective}
 
@@ -161,7 +164,7 @@ The objective of the pre-trial study is to decide the number of polygons for the
 We recruited 5 participants, 4 males and 1 female. None of the subjects were visually impaired.
 
 \subsubsection{Independent Variables and Dependent Measures}
-\label{sec:ivdm}
+\label{sec:hrr:us:pts:ivdm}
 
 The experiment was conducted with one independent variable: number of polygons of the surface mesh in the 3D model.
 The independent variable has 50 levels. For the first level, the model is composed of 20 polygons. For each of the 49 subsequent levels, the number of polygons is increased by $10\%$. We measure the number of polygons necessary for a subject to recognize the object for each 3D model.
@@ -201,7 +204,7 @@ Model \#15 & 69 & 83 & \textbf{75} & 75 & 51 \\
 Table~\ref{tab:pts} contains the data collected from the pre-trial study. The number of polygons above which a participant ceases to make mistakes (i.e. the participant choses the correct answer consistently at all further levels of fidelity). The data are used to decide the number of polygons for the low-fidelity models in the main study. To eliminate the outliers, we select the second highest number among all participants for each model.
 
 \subsection{Main Study}
-\label{sec:ms}
+\label{sec:hrr:us:ms}
 
 Our main user study is designed to address the following research questions:
 \begin{enumerate}
@@ -249,10 +252,10 @@ H\textsubscript{08} & Existence of jitter does not affect the SDoT \\
 15 volunteers participated in the main study, 12 males and 3 females. None of the subjects were visually impaired.
 
 \subsubsection{Independent Variables and Dependent Measures}
-\label{sec:ms:ivdm}
+\label{sec:hrr:us:ms:ivdm}
 
 The experiment was conducted with four independent variables: key model fidelity, environment model fidelity, delay and jitter.
-Key model fidelity and environment model fidelity have two levels: high and low, as described in Section~\ref{sec:pts}.
+Key model fidelity and environment model fidelity have two levels: high and low, as described in Section~\ref{sec:hrr:us:pts}.
 The variable delay is set to introduce network delay. In the variable network delay, we summarize the effects of network transmission, remote rendering and encoding. In this experiment, the variable delay was simulated locally. Similar to the work by Zhu et al.~\cite{zhu1998jitter}, we use the normal distribution of (\ref{equ:jitter}) for jitter in settings with non-zero delay.
 
 \begin{equation}
@@ -302,7 +305,7 @@ The SDoT is measured using a questionnaire directly integrated within the test a
 
 We run the test application 20 times for each subject. We vary the key model fidelity, environment model fidelity, delay and jitter across these runs. Table~\ref{tab:pus} details the test application configurations for the 20 runs. The order of the 20 configurations is randomized across subjects to avoid biasing the results.
 For each configuration, ten 3D objects appear. So the maximum score of the ODoT for each configuration is 10 and the minimum score is 0.
-As mentioned in Section~\ref{sec:ms:ivdm}, we also collect SDoT during the experiment. After each run of the test application, the participant was asked to fill the SDoT questionnaire.
+As mentioned in Section~\ref{sec:hrr:us:ms:ivdm}, we also collect SDoT during the experiment. After each run of the test application, the participant was asked to fill the SDoT questionnaire.
 
 As shown in Table~\ref{tab:pus}, we prepare four types of scenes: a scene with only low-fidelity key models and low-fidelity environment models, a scene with low-fidelity key models and high-fidelity environment models, a scene with high-fidelity key models and low-fidelity environment models and a scene with high-fidelity key models and high-fidelity environment models. We simulate three different network delays: $0\mathrm{ms}$, $80\mathrm{ms}$ and $120\mathrm{ms}$ and we also consider network jitter.
 
@@ -315,7 +318,7 @@ As shown in Table~\ref{tab:pus}, we prepare four types of scenes: a scene with o
 \end{figure}
 
 \subsubsection{Results}
-\label{sec:dao}
+\label{sec:hrr:us:r}
 
 To understand how each factor affects the SDoT and the ODoT, we use analysis of variance (ANOVA) to interpret our experimental data.
 
