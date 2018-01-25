@@ -4,7 +4,7 @@
 \begin{center}\textbf{Abstract}\end{center}
 
 In this thesis proposal, we aim to develop an Augmented Reality (AR) framework for training scenarios.
-Compared with the existing augmented reality applications, our proposed framework has three advantages: 1) the proposed method acts as an interactive system between the trainer and the trainee, while the existing methods typically guide the trainee through a fixed series of steps; 2) the proposed method does not need markers to estimate the 3D structure of the models and the environment; 3) the proposed method is compatible with commercial equipments that have less powerful graphics capacity and various network conditions.
+Compared with the existing augmented reality applications, our proposed framework has three advantages: 1) the proposed method acts as an interactive system between the trainer and the trainee, while the existing methods typically guide the trainee through a fixed series of steps; 2) the proposed method does not need markers to estimate the 3D structure of the models and the environment; 3) the proposed method is compatible with commercial equipment that has less powerful graphics capacity and various network conditions.
 
 Three sub-goals constitute our final goal.
 The first sub-goal is a video object segmentation algorithm.
@@ -18,11 +18,11 @@ The second sub-goal is a hybrid remote rendering framework for applications on m
 
 Finally, the last sub-goal is to combine the former two sub-goals to develop an AR framework for training scenarios.
 It acts as a bridge between the trainer and the trainee when they are in different geometrical locations and is able to leverage the recently emerged augmented reality glasses or mobile devices.
-Client-server pattern is used in this system. There are two types of clients in our system: a) trainer, b) trainee.
+A client-server pattern is used in this system. There are two types of clients in our system: a) trainer, b) trainee.
 Both of the trainer and the trainee use AR glasses or mobile devices to capture videos of the environment.
 Then the videos captured are sent to the server that uses the proposed video object segmentation algorithm combined with a markerless 3D object pose estimation method to calculate the pose of all the objects of interest.
 Moving objects are rendered and the frames are sent to the clients and overlaid on the real scenes, i.e. any objects moved by the trainer will be rendered and sent to the trainee, and, similarly, any objects moved by the trainee are rendered and sent to the trainer.
-During this course, the remote trainer guide the trainee through the real time operations and collect their operations, then the trainer is able to give customized feedbacks to each trainee, which is how the learning actually takes place.
+During this course, the remote trainer guide the trainee through the real-time operations and collect their operations, then the trainer is able to give customized feedbacks to each trainee, which is how the learning actually takes place.
 
 \cleardoublepage
 %\newpage
