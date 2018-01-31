@@ -17,12 +17,41 @@ In this article, we discuss the use of AR in training and propose a new framewor
 Currently, traditional training methods (e.g. book, audio and videos) are still the most popular in remote training. However, the AR system is now widely regarded as a promising platform for complex and highly demanding tasks.
 Gavish et. al. developed an experiment to evaluate the performance difference between AR training system and traditional training system~\cite{gavish2015}, by using AR system and traditional training system in a real industrial maintenance and assembly task. They argued that trainees using AR training system achieve fewer unsolved errors.
 
-However, as pointed out by Crescenzio et al., many factors--such as cumbersome hardware, the need to put markers on the aircraft, and the need to quickly create digital content--seem to hinder its effective implementation in industry~\cite{crescenzio2011}. With the rapid progress of AR glasses and mobile devices in years, the hardware used by augmented reality applications have been simplified. Many of them use only AR glasses or mobile devices~\cite{hincapie2011,webel2011}. The development of markerless 3D object recognition approaches~\cite{tjaden2016} reduced the use of markers in augmented reality applications. However, many augmented reality applications still do not meet the need to quickly create digital content, especially for those applications that involve real equipment. One of the contributions of the proposed work is to enable creating digital content in real-time for trainees when they are interacting with real objects and need guidelines.
+The invitation of AR systems can be dated back to 1960s~\cite{sutherland1968,johnson2010, yuen2011}. Boeing~\cite{caudell1992} had already used AR technology in their wire bundle assembly training. They leveraged a Head-Mounted Display (HMD) combined with head position sensing to superimpose computer-produced diagram on real-world objects. Since then, many AR systems have been proposed and applied on training area. These systems can be categorized into two categories: virtual objects and real objects. Fig.~\ref{fig:category} shows two examples, where the left one shows that a trainee is interacting with a real object, and the right one depict that a trainee is interacting with a virtual object. In this article, we are interested in the platforms in the latter category--real objects. A common feature of this type of systems is that these systems use predefined scripts and materials to show the trainees essential information or correct operation procedures superimposed on real-world objects.
+Therefore, authoring tools became an important issue in AR training area, since AR training applications are usually designed as task-specific, in order to be more robust.
+Researchers have developed a variety of approaches to facilitate authoring process~\cite{wang2010,petersen2012,anderson2013,bhattacharya2015}.
+However, they are still not real-time authoring tools, since the content need to be prepared or captured before the training.
+Practical feedback solution is another popular research topic. Many AR training platforms aim to providing the trainees with rich and accurate information, but pay less attention on evaluating the performance of trainees. Re and Bordegoni~\cite{re2014} presented a monitor system for training, such that supervisors could check the assembly/maintenance activity from a remote display and provide feedback to the users whenever necessary. However, it does not allow gathering feedbacks from the trainees and correcting during the training process.
 
-We are going to develop a training system with augmented reality hardware. Envision a scenario: A trainer is directing the trainees on how to operate a machine that consists of multiple movable components.
-The trainer and trainees are in different locations and each of them wears augmented reality glasses. When the trainer is operating a component of the machine, the trainees will see that change in their views as a virtual component overlaid on the real scene.
-Vice versa, when the trainees are operating a component of the machine on their side, the trainer will see the changes from each trainee in his or her view. The change made by each trainee is demonstrated as a virtual object overlaid on the real scene.
-With this system, we are able to deliver better experience for remote training, since the trainees will obtain intuitive instructions, and the trainer can see the performance of the trainees in real time and give feedback immediately. This is different from traditional remote training approaches, such as books, audios and videos.
+% old previous work
+%However, as pointed out by Crescenzio et al., many factors--such as cumbersome hardware, the need to put markers on the aircraft, and the need to quickly create digital content--seem to hinder its effective implementation in industry~\cite{crescenzio2011}. With the rapid progress of AR glasses and mobile devices in years, the hardware used by augmented reality applications have been simplified. Many of them use only AR glasses or mobile devices~\cite{hincapie2011,webel2011}. The development of markerless 3D object recognition approaches~\cite{tjaden2016} reduced the use of markers in augmented reality applications. However, many augmented reality applications still do not meet the need to quickly create digital content, especially for those applications that involve real equipment. One of the contributions of the proposed work is to enable creating digital content in real-time for trainees when they are interacting with real objects and need guidelines.
+
+We are going to develop a training system with augmented reality hardware.
+Envision a scenario:
+A factory is preparing a new assembly task.
+Before actually conducting the task, all the relevant workers must go through a training process to learn the essential knowledge needed in the task.
+The trainer is in another country and will train the trainees remotely through an AR training system.
+All materials that need to be prepared beforehand are the CAD models of all components of the product.
+At a location in another country, the trainer assembles the product from the beginning, and the procedure of which is recorded by a RGB camera. Poses of the components of the product at each frame are calculated. The recorded procedure plays as the guide for the training.
+At the other side, the trainees wear AR glasses or hold mobile devices that face the components they are assembling. What they need to do is will show on the glasses or displays as an overlay on the real object. More specifically, if a trainer is guided to dock a battery onto the battery jar, a virtual battery is animated to move from the current position of the real object to the position it should be at.
+For a complex assembly task, this system is able to reduce the authoring time for the guide dramatically, since trainer does not need to write scripts or programs for the AR guide.
+Moreover, the guide can be authored by the trainer during the training in real-time.
+Both of the trainer and the trainees wear AR glasses or hold mobile devices, with cameras facing the components they are assembling.
+Whenever the trainer assembles a component, a virtual component will show on the glasses or displays of all the trainees, and is animated to show where it should be moved to.
+Similarly, the poses of the components that each trainee has moved are also recorded by the camera and calculated.
+Those poses are transmitted to the trainer's glasses or mobile device and shown as virtual objects.
+The virtual objects rendered for the trainees can be distinguished by labels or colors. If there are too many trainees, only those components that are assembled incorrectly are shown.
+
+The proposed system has a wide variety of applications, especially in assembly and maintenance training and medical training.
+Compared to the existing AR training platforms, the proposed platform has two advantages: 1) it is a real-time platform that allows the trainer to author the instructions in real-time; 2) it enables the trainer to gather feedbacks during the training process in real-time.
+
+% missing building blocks
+
+% old scenarios
+%Envision a scenario: A trainer is directing the trainees on how to operate a machine that consists of multiple movable components.
+%The trainer and trainees are in different locations and each of them wears augmented reality glasses. When the trainer is operating a component of the machine, the trainees will see that change in their views as a virtual component overlaid on the real scene.
+%Vice versa, when the trainees are operating a component of the machine on their side, the trainer will see the changes from each trainee in his or her view. The change made by each trainee is demonstrated as a virtual object overlaid on the real scene.
+%With this system, we are able to deliver better experience for remote training, since the trainees will obtain intuitive instructions, and the trainer can see the performance of the trainees in real time and give feedback immediately. This is different from traditional remote training approaches, such as books, audios and videos.
 
 To achieve the training framework, we propose three building blocks:
 
@@ -105,18 +134,22 @@ Therefore, the camera and the AR devices send a video sequence to the server res
 
 \section{Contributions}
 
-The main contributions of the proposed framework are:
+The thesis proposal makes or proposes to make the following contributions:
 
-\begin{itemize}
-  \item
-  an on-line object segmentation method that empowers pose estimation algorithms to calculate faster and more accurately
-  \item
-  a remote rendering framework delivering high quality rendering to mobile devices while minimizing bandwidth usage
-  \item
-  an augmented reality training framework that enables the trainers to provide instructions to the trainees remotely and collect feedback, in real-time
-  \item
-  an augmented reality training framework that works with devices without powerful graphics capacity.
-\end{itemize}
+\subsection{Video Object Segmentation}
+
+The major contribution of this work is a fast on-line video object segmentation method that takes both motion and appearance of objects into account. We propose a novel integration of RBF appearance modeling and background subtraction through a Graph Cuts optimization on superpixels. We use local modeling to accelerate segmentation by dividing frames into regions that contain one foreground object each which greatly reduces the number of pixels to be processed. We also propose an application of our on-line approach for compressing videos with compression quality adapted to foreground and background. The video object segmentation allows us to reduce the quality of the background by pre- processing it with a bilateral filter before compression while foreground objects are compressed as is by the compression scheme.
+
+\subsection{Hybrid Remote Rendering}
+
+The proposed architecture is able to reduce required network bandwidth and latency in user interactions. Since only the regions of interest of the entire frame are encoded and streamed to the clients, while the rest is discarded, it reduces the bit rate of the encoded video stream. The user interaction latency is composed of three components: rendering, encoding and network transmission. Our proposed method aims at reducing the rendering and encod- ing time by only rendering and encoding the key models in high-fidelity mode and rendering the rest in low-fidelity mode without encoding.
+
+\section{Augmented Reality Training Framework}
+
+The proposed AR training framework has three main contributions.
+First of all, it is a real-time platform that allows the trainer to author the instructions in real-time. A common feature of the existing work is that these systems use predefined scripts and materials to show the trainees essential information or correct operation procedures superimposed on real-world objects. Therefore, for a new training task, people must author the training process beforehand, which can be inconvenient, especially for the complex tasks.
+Second, it enables the trainer to gather feedbacks during the training process in real-time. Although practical feedback gathering solutions have been proposed by many researchers, they still do not allow gathering feedbacks from the trainees and correcting during the training process, which may influence the outcome of the AR training systems.
+Last, we bear in mind the capacity of working with devices without powerful graphics capacity. Because AR training system often rely on mobile device, no matter they are AR glasses, mobile phones or tablets, which have very limited rendering capacity. This can influence the visual quality of the training process.
 
 \section{Outline}
 
