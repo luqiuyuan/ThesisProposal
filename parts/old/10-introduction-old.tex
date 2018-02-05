@@ -1,0 +1,156 @@
+%======================================================================
+\chapter{Introduction}
+\label{cha:i}
+%======================================================================
+
+This introduction chapter is to briefly introduce the goal of my Ph.D. study: an augmented reality framework for training scenarios. First, we depict the application scenario and unveil the roadmap to the final goal, namely the sub-goals.
+Next, this chapter also contains the problem statement of each sub-goal. It unveils the statuses of the corresponding research fields and what we have done or will do in each research field.
+Then we list the main contributions that support the scientific novelty of this thesis proposal.
+Finanly, we conclude with an outline of the manuscript structure.
+
+\section{Motivation of the Problem}
+\label{sec:i:mp}
+
+Augmented Reality (AR) is attracting more attention today than ever before. The use of AR in numerous fields has been explored by researchers, such as games, communication, medicine, training and etc~\cite{nakajima2003,gonzalez-franco2016,hincapie2011,webel2011}.
+In this article, we discuss the use of AR in training and propose a new framework that facilitates remote training.
+
+Currently, traditional training methods (e.g. book, audio and videos) are still the most popular in remote training. However, the AR system is now widely regarded as a promising platform for complex and highly demanding tasks.
+Gavish et. al. developed an experiment to evaluate the performance difference between AR training system and traditional training system~\cite{gavish2015}, by using AR system and traditional training system in a real industrial maintenance and assembly task. They argued that trainees using AR training system achieve fewer unsolved errors.
+
+The invitation of AR systems can be dated back to 1960s~\cite{sutherland1968,johnson2010, yuen2011}. Boeing~\cite{caudell1992} had already used AR technology in their wire bundle assembly training. They leveraged a Head-Mounted Display (HMD) combined with head position sensing to superimpose computer-produced diagram on real-world objects. Since then, many AR systems have been proposed and applied on training area. These systems can be categorized into two categories: virtual objects and real objects. Fig.~\ref{fig:category} shows two examples, where the left one shows that a trainee is interacting with a real object, and the right one depict that a trainee is interacting with a virtual object. In this article, we are interested in the platforms in the latter category--real objects. A common feature of this type of systems is that these systems use predefined scripts and materials to show the trainees essential information or correct operation procedures superimposed on real-world objects.
+Therefore, authoring tools became an important issue in AR training area, since AR training applications are usually designed as task-specific, in order to be more robust.
+Researchers have developed a variety of approaches to facilitate authoring process~\cite{wang2010,petersen2012,anderson2013,bhattacharya2015}.
+However, they are still not real-time authoring tools, since the content need to be prepared or captured before the training.
+Practical feedback solution is another popular research topic. Many AR training platforms aim to providing the trainees with rich and accurate information, but pay less attention on evaluating the performance of trainees. Re and Bordegoni~\cite{re2014} presented a monitor system for training, such that supervisors could check the assembly/maintenance activity from a remote display and provide feedback to the users whenever necessary. However, it does not allow gathering feedbacks from the trainees and correcting during the training process.
+
+% old previous work
+%However, as pointed out by Crescenzio et al., many factors--such as cumbersome hardware, the need to put markers on the aircraft, and the need to quickly create digital content--seem to hinder its effective implementation in industry~\cite{crescenzio2011}. With the rapid progress of AR glasses and mobile devices in years, the hardware used by augmented reality applications have been simplified. Many of them use only AR glasses or mobile devices~\cite{hincapie2011,webel2011}. The development of markerless 3D object recognition approaches~\cite{tjaden2016} reduced the use of markers in augmented reality applications. However, many augmented reality applications still do not meet the need to quickly create digital content, especially for those applications that involve real equipment. One of the contributions of the proposed work is to enable creating digital content in real-time for trainees when they are interacting with real objects and need guidelines.
+
+We are going to develop a training system with augmented reality hardware.
+Envision a scenario:
+A factory is preparing a new assembly task.
+Before actually conducting the task, all the relevant workers must go through a training process to learn the essential knowledge needed in the task.
+The trainer is in another country and will train the trainees remotely through an AR training system.
+All materials that need to be prepared beforehand are the CAD models of all components of the product.
+At a location in another country, the trainer assembles the product from the beginning, and the procedure of which is recorded by a RGB camera. Poses of the components of the product at each frame are calculated. The recorded procedure plays as the guide for the training.
+At the other side, the trainees wear AR glasses or hold mobile devices that face the components they are assembling. What they need to do is will show on the glasses or displays as an overlay on the real object. More specifically, if a trainer is guided to dock a battery onto the battery jar, a virtual battery is animated to move from the current position of the real object to the position it should be at.
+For a complex assembly task, this system is able to reduce the authoring time for the guide dramatically, since trainer does not need to write scripts or programs for the AR guide.
+Moreover, the guide can be authored by the trainer during the training in real-time.
+Both of the trainer and the trainees wear AR glasses or hold mobile devices, with cameras facing the components they are assembling.
+Whenever the trainer assembles a component, a virtual component will show on the glasses or displays of all the trainees, and is animated to show where it should be moved to.
+Similarly, the poses of the components that each trainee has moved are also recorded by the camera and calculated.
+Those poses are transmitted to the trainer's glasses or mobile device and shown as virtual objects.
+The virtual objects rendered for the trainees can be distinguished by labels or colors. If there are too many trainees, only those components that are assembled incorrectly are shown.
+
+The proposed system has a wide variety of applications, especially in assembly and maintenance training and medical training.
+Compared to the existing AR training platforms, the proposed platform has two advantages: 1) it is a real-time platform that allows the trainer to author the instructions in real-time; 2) it enables the trainer to gather feedbacks during the training process in real-time.
+
+% missing building blocks
+
+% old scenarios
+%Envision a scenario: A trainer is directing the trainees on how to operate a machine that consists of multiple movable components.
+%The trainer and trainees are in different locations and each of them wears augmented reality glasses. When the trainer is operating a component of the machine, the trainees will see that change in their views as a virtual component overlaid on the real scene.
+%Vice versa, when the trainees are operating a component of the machine on their side, the trainer will see the changes from each trainee in his or her view. The change made by each trainee is demonstrated as a virtual object overlaid on the real scene.
+%With this system, we are able to deliver better experience for remote training, since the trainees will obtain intuitive instructions, and the trainer can see the performance of the trainees in real time and give feedback immediately. This is different from traditional remote training approaches, such as books, audios and videos.
+
+To achieve the training framework, we propose three building blocks:
+
+\begin{itemize}
+  \item
+  An on-line and fast video object segmentation algorithm to segment the components used in the training scenario
+  \item
+  A remote rendering framework that adapts to various network conditions and hardware capacities
+  \item
+  An augmented reality framework that provides real time and remote training services
+\end{itemize}
+
+The problem of the first building block can be formulated as: Given a sequence of monocular optical observations, segment the objects of interest from the background, without knowing the entire sequence. The problem of the second building block can be formulated as: Knowing the 3D models of the objects of interest, and their transformations over time, render the 3D models remotely on a high-end workstation and apply the rendering results on clients that have less powerful graphic capacity.  The problem of the third building block can be formulated as: Giving the video sequences of both the trainer's and the trainee's workplace, render the 3D models operated by the trainer on the trainee's view.
+
+\section{Problem Statement}
+
+\subsection{Object Segmentation}
+
+Object segmentation is an essential part of augmented reality.
+It is the process of separating foreground objects from the background in a video~\cite{papazoglou2013}. A wide range of applications benefit from the progress of video object segmentation, e.g. robot-object interaction, recognition, video compression, etc.
+%
+%A psychophysical study with congenitally blind individuals who gained eyesight as adults concludes that, for human beings, motion cues are key in object segmentation, instead of figural cues~\cite{ostrovsky2009}.
+A variety of methods have been proposed to address the task~\cite{papazoglou2013,ma2012,wang2015,brox2010,taylor2015}. Most methods use motion cues to initialize the object segmentation.
+A common method for motion detection is  background subtraction with mixture of Gaussians~\cite{kaewtrakulpong2002,zivkovic2004}. This technique models each pixel indepedently as a mixture of Gaussians 
+% and updates the model with an online approximation method. 
+but as it detects motion in each frame independently, the results lack completeness and temporal persistence.
+
+\subsection{Remote Rendering}
+
+Mobile applications for gaming, training, healthcare among others rely on the rapid evolution of mobile devices in terms of both hardware and software.
+Mobile devices offer a more intuitive interaction experience through gestures 
+compared to PCs that mostly use traditional keyboard and mouse interfaces.
+However, complex 3D models demand high-end computing hardware. Compared to PCs, mobile devices have much lower processing power, limited storage and less capable rendering hardware, even in most recent high-end mobile devices.
+Developing mobile applications, especially 3D graphics applications, often requires simplification of the 3D models, leading to a degraded rendering quality.
+Computationally intensive 3D graphics rendering tasks further burden the onboard battery.
+
+One way to address the resource limitations of mobile devices is through Cloud Mobile Rendering (CMR).
+CMR offloads computationally intensive rendering to cloud servers:
+the server initializes a rendering engine and an encoder to serve every connected client. The models are rendered on the server side and encoded in video frames streamed from the server to the client~\cite{lamberti2007,lu2011,ma2017,chang2004,simoens2012}.
+
+However, CMR systems often require a very high network bandwidth, which is seldom available and suffers from interaction latency~\cite{chen2014}. Various attempts have been made to improve such systems. 
+Boukerche and Pazzi~\cite{boukerche2006} use environment maps rendered on a server and sent to the client to reduce bandwidth. The client is able to respond to user interactions, resulting in panning and tilting without latency based on the environment map.
+Shi et al.~\cite{shi2012} propose a framework that leverages depth maps to reduce interaction latency. They take advantage of 3D image warping to synthesize the mobile display from the depth images generated on the server.
+However, theses two image-based rendering techniques assume static scenes and only support limited user interactions.
+For example, the use of environment maps by Boukerche and Pazzi~\cite{boukerche2006} accelerates panning interactions, but a new environment map needs to be generated for a novel viewpoint, which increases interaction delay and bandwidth requirements. Similarly, at scene changes, the environment maps or the depth maps also need to be regenerated in the approach proposed by Shi et al.~\cite{shi2012}.
+
+We propose a remote rendering system that minimizes the network bandwidth requirements in remote rendering.
+Our approach is a client-server architecture and maintains two versions of models: low-fidelity models and high-fidelity models.
+Low and high fidelity models differ in the number of polygons and in rendering quality.
+
+On the client side, the mobile device renders low-fidelity models that have less polygons, lower fidelity of textures, and lower quality rendering effects, while on the server side, the workstation renders high-fidelity models that have more polygons, higher fidelity of textures, and higher quality rendering effects. Hence, key models are rendered on the server and captured in images that are sent to the client as a video stream. We define key models as those that the user is interacting with. These models can be identified from interaction information sent to the server. Additional key models may be specified in advance by the developers based on application-specific criteria.
+
+The proposed architecture is able to reduce the required network bandwidth and latency in user interactions.
+Since only the regions of interest of the entire frame are encoded and streamed to the clients while the rest is discarded, it reduces the bit rate of the encoded video stream.
+The user interaction latency is composed of three components: rendering, encoding, and network transmission. Our proposed method aims at reducing the rendering and encoding time by only rendering and encoding the key models in high-fidelity mode and rendering the rest in low-fidelity mode without encoding.
+
+\subsection{Augmented Reality Training Framework}
+
+As the augmented reality technology is progressing rapidly, it not only opens the doors for unlimited creativity and innovation, but also enables enterprises to speed up the training process and make it more beneficial to employees.
+Augmented reality is taking training to a higher level, as it allows trainees to gain hands-on experience without the costs and risks of real hands-on. Another advantage that AR can provide is taking the remote training further than existing tools can. A trainer can immerse the remote trainees in a project that in-house teams are working on, bringing trainees together from across the globe in a way that feels more real then ever before.
+
+In addition, VR systems can provide extra cues, not available in the real world~\cite{gosselin2010}, that can facilitate the learning of the task and allow simulating the task in a flexible way to adapt it to users' needs and training goals.
+
+Researchers have made great efforts to apply augmented reality in training fields, especially in medicine, maintenance and repair, training, and machine setup.
+
+In augmented reality applications, the virtual objects are overlaid on top of the real scene, via monitors, HMD (Head-Mounted Display), or even holographic projection. However, in different applications, the interactive objectives are different. For example, Webel et al.~\cite{webel2011} proposed a framework for assembly and maintenance training. The trainees operate on a real machine, while the instructions are shown by overlaying a virtual machine on the real one. In this work, the interactive targets are the real objects, while the virtual ones are shown as the instructions. Gonzalez-Franco et al.~\cite{gonzalez-franco2016} developed an approach for training in complex manufacturing scenarios, where the virtual objects are projected into the real scenes without their real counterparts. The trainers operate on the virtual objects with a wand to teach the trainees. In this use case, the interactive targets are the virtual objects.
+
+We categorize the augmented reality applications into two categories according to the interactive objectives: real objects and virtual objects. Our proposed framework falls into the first category, namely real objects. As mentioned in Section~\ref{sec:i:mp}, the trainees need to operate the components on their side according to the virtual components.
+
+Currently, augmented reality applications of the first category mostly involve virtual objects as the instruction. The virtual objects are prepared before-hand.
+The difference between our proposed method and the existing methods is that the instruction in our method is generated by a trainer in real time; therefore, it enables the trainers to give instructions in urgent situations, such as safety events.
+
+In typical augmented reality applications, camera registration needs to be done related to the object of interest. However, in our framework, camera registration alone is not enough since there may exist multiple objects of interest.
+Give the 3D structure of OOI (Object of Interest), Tjaden et al.~\cite{tjaden2016} proposed a method to estimate object pose according to object segmentation of a video sequence. This method works with multiple objects.
+It is an appropriate approach for our framework. First, the speed of this method is high, running at 50-100 Hz on a commodity laptop. Second, our previous work on video object segmentation can be a preprocessing step for 3D object post estimation, since it produces silhouette of each component.
+
+After the camera, the AR glasses and all the components are registered, the server in between trainer side and trainee side renders the moving components according to the trainee's view, in high quality.
+However, not all AR glasses or mobile devices are equipped with a powerful graphic capacity, e.g. Google Glasses or low-end mobile phones.
+Therefore, the camera and the AR devices send a video sequence to the server respectively. The registration and rendering are both done on the server side, which relieve devices on both side from heavy computation workload.
+
+\section{Contributions}
+
+The thesis proposal makes or proposes to make the following contributions:
+
+\subsection{Video Object Segmentation}
+
+The major contribution of this work is a fast on-line video object segmentation method that takes both motion and appearance of objects into account. We propose a novel integration of RBF appearance modeling and background subtraction through a Graph Cuts optimization on superpixels. We use local modeling to accelerate segmentation by dividing frames into regions that contain one foreground object each which greatly reduces the number of pixels to be processed. We also propose an application of our on-line approach for compressing videos with compression quality adapted to foreground and background. The video object segmentation allows us to reduce the quality of the background by pre- processing it with a bilateral filter before compression while foreground objects are compressed as is by the compression scheme.
+
+\subsection{Hybrid Remote Rendering}
+
+The proposed architecture is able to reduce required network bandwidth and latency in user interactions. Since only the regions of interest of the entire frame are encoded and streamed to the clients, while the rest is discarded, it reduces the bit rate of the encoded video stream. The user interaction latency is composed of three components: rendering, encoding and network transmission. Our proposed method aims at reducing the rendering and encod- ing time by only rendering and encoding the key models in high-fidelity mode and rendering the rest in low-fidelity mode without encoding.
+
+\section{Augmented Reality Training Framework}
+
+The proposed AR training framework has three main contributions.
+First of all, it is a real-time platform that allows the trainer to author the instructions in real-time. A common feature of the existing work is that these systems use predefined scripts and materials to show the trainees essential information or correct operation procedures superimposed on real-world objects. Therefore, for a new training task, people must author the training process beforehand, which can be inconvenient, especially for the complex tasks.
+Second, it enables the trainer to gather feedbacks during the training process in real-time. Although practical feedback gathering solutions have been proposed by many researchers, they still do not allow gathering feedbacks from the trainees and correcting during the training process, which may influence the outcome of the AR training systems.
+Last, we bear in mind the capacity of working with devices without powerful graphics capacity. Because AR training system often rely on mobile device, no matter they are AR glasses, mobile phones or tablets, which have very limited rendering capacity. This can influence the visual quality of the training process.
+
+\section{Outline}
+
+The reminder of this thesis is structured as follows. Chapter~\ref{chap:rw} reviews the previous literature of each research fields. Chapter~\ref{chap:vos} shows our work on video object segmentation and its usage in video content-aware compression. Chapter~\ref{chap:hrr} demonstrates our on-going work of hybrid remote rendering. Chapter~\ref{chap:rrtar} unveils our plan to accomplish the final goal (i.e. realtime remote training with augmented reality). Chapter~\ref{chap:c} concludes this thesis proposal and outlines the schedule of the remaining work.
