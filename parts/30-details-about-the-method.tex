@@ -52,7 +52,7 @@ In our framework, we use the video object segmentation method that we have creat
 
 % four
 Four, AR glasses or mobile devices often has far less powerful graphics capacity than desktop PCs or workstations.
-To minimize the computing costs of the clients, we offload the rendering tasks to the server.
+To minimize the computing costs of the clients, we offload the complex rendering tasks to the server.
 In the remote rendering method, low-fidelity models are stored on the clients, while high-fidelity models are stored on the server.
 Because each client has its own view, the server must render a frame for each client.
 To save bandwidth and reduce network latency, the server only renders key models. The rendered frames only contain the key model rendering results.
@@ -63,7 +63,7 @@ Last, in the synchronization part, we need a mechanism to manage communications 
 It must enable synchronization among multiple clients, and if a client fails to respond, the server must not be blocked.
 Furthermore, it has the capacity to track the views of different clients
 
-An advantage of our proposed framework is that, only video capture is performed on the clients, while all the other parts are performed on the server.
+An advantage of our proposed framework is that, only video capture and relatively simple rendering are performed on the clients, while all the other parts are performed on the server.
 In this way, the computing cost of the clients is minimized.
 
 From Figure~\ref{fig:ar-training-overview}, we can see that, to realize the framework, there are three parts that need to be explored.

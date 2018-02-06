@@ -36,7 +36,7 @@ Both of the trainers and the trainees use AR glasses or mobile devices to captur
 Given the 3D structures of the environment (components involved in training processes), we leverage the novel video object segmentation strategy that we created to track the 3D poses of the components without markers.
 Moving objects are rendered and the frames are sent to the clients and overlaid on the real scenes, i.e. any objects moved by the trainer will be rendered and sent to the trainee, and, similarly, any objects moved by the trainee are rendered and sent to the trainer.
 During this course, the remote trainer guides the trainees in a collaborative way. Therefore, the trainer is able to give customized feedbacks to each trainee, which is how the learning actually takes place.
-We bear in mind the capacity of working with devices without powerful graphics capacity. Tracking and rendering are offloaded to the server to relieve the computing burden of the AR glasses and mobile devices.
+We bear in mind the capacity of working with devices without powerful graphics capacity. Tracking and a part of rendering task are offloaded to the server to relieve the computing burden of the AR glasses and mobile devices.
 
 Compared to the existing AR training applications, our proposed framework has three advantages:
 1) It does not require a pre-defined guidance, which makes it suitable to complex tasks;
