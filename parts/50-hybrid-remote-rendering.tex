@@ -35,6 +35,7 @@ On the client side, the mobile device renders low-fidelity models that have less
 The proposed architecture is able to reduce the required network bandwidth and latency in user interactions.
 Since only the regions of interest of the entire frame are encoded and streamed to the clients while the rest is discarded, it reduces the bit rate of the encoded video stream.
 The user interaction latency is composed of three components: rendering, encoding, and network transmission. Our proposed method aims at reducing the rendering and encoding time by only rendering and encoding the key models in high-fidelity mode and rendering the rest in low-fidelity mode without encoding.
+Because the frames are encoded and streamed over non-dedicated networks, of which the conditions often do not satisfy the requirements of remote rendering applications. The most important contribution of the proposed framework is enabling a trade-off between rendering quality and network delay, which is essential but existing remote rendering applications cannot address this issue.
 
 \section{Background}
 \label{sec:hrr:bg}
