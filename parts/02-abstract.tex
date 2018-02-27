@@ -3,40 +3,14 @@
 
 \begin{center}\textbf{Abstract}\end{center}
 
-%In this thesis proposal, we aim to develop an Augmented Reality (AR) framework for training scenarios.
-%Compared with the existing augmented reality applications, our proposed framework has three advantages: 1) the proposed method acts as an interactive system between the trainer and the trainee, while the existing methods typically guide the trainee through a fixed series of steps; 2) the proposed method does not need markers to estimate the 3D structure of the models and the environment; 3) the proposed method is compatible with commercial equipment that has less powerful graphics capacity and various network conditions.
-%
-%Three sub-goals constitute our final goal.
-%The first sub-goal is a video object segmentation algorithm.
-%We present a method for extracting foreground objects from video and its application in content-aware video compression. Our method uses trimaps inferred from background subtraction to represent the foreground-background relationship. The appearance of foreground and background are modeled with Radial Basis Functions initialized from the background substraction step. Finally, the algorithm Graph Cuts is used to compute a binary mask. Our method is fully automatic, fast, and does not make restrictive assumptions about object motions. In experiments on standard data sets, the proposed approach achieves comparable results to the state-of-the-art video object segmentation methods but our method is much faster. We also demonstrate an application of the proposed method to content-aware video compression.
-%% wording: it should be markerless instead of marker-less
-%With this algorithm, we are able to leverage an existing 3D object pose estimation algorithm to perform a markerless 3D structure estimation for the models and the environment in a training scenario.
-%
-%% This part is the abstract of the remote rendering paper with some minor changes. However, it does not mention the user study part since it is not needed here.
-%Given the rapid evolution of mobile devices in terms of both hardware and software, most of recent AR applications target in mobile devices, such as mobile phones and AR glasses.
-%The second sub-goal is a hybrid remote rendering framework for applications on mobile devices. In our remote rendering approach, we adopt a client-server model, where the server is responsible for rendering high-fidelity models, encoding the rendering results and sending them to the client, while the client renders low-fidelity models and overlays the high-fidelity frames received from the server on its rendering results. With this configuration, the client is able to keep functioning regardless of network condition and bandwidth. Moreover, to minimize the bandwidth requirements, only key models are rendered in high-fidelity mode.
-%
-%Finally, the last sub-goal is to combine the former two sub-goals to develop an AR framework for training scenarios.
-%It acts as a bridge between the trainer and the trainee when they are in different geometrical locations and is able to leverage the recently emerged augmented reality glasses or mobile devices.
-%A client-server pattern is used in this system. There are two types of clients in our system: a) trainer, b) trainee.
-%Both of the trainer and the trainee use AR glasses or mobile devices to capture videos of the environment.
-%Then the videos captured are sent to the server that uses the proposed video object segmentation algorithm combined with a markerless 3D object pose estimation method to calculate the pose of all the objects of interest.
-%Moving objects are rendered and the frames are sent to the clients and overlaid on the real scenes, i.e. any objects moved by the trainer will be rendered and sent to the trainee, and, similarly, any objects moved by the trainee are rendered and sent to the trainer.
-%During this course, the remote trainer guide the trainee through the real-time operations and collect their operations, then the trainer is able to give customized feedbacks to each trainee, which is how the learning actually takes place.
-
 In the past two decades, augmented reality (AR) has received a growing amount of attention by researchers in the area of training, because AR can be applied to address a wide range of problems facing the traditional training tools.
-It not only opens the doors for unlimited creativity and innovation, but also enables enterprises to speed up the training process and make it more beneficial to employees.
-AR training techniques can also take the remote training further than existing tools can. A trainer can immerse the remote trainees in a project that in-house teams are working on, bringing trainees together from across the globe in a way that feels more real then ever before.
-A lot of practical AR training systems have been developed and applied in the areas of industry, medicine, education, etc.
-Besides, there is still plenty of room to grow.
-
-This article aims to propose a novel training framework based on AR to facilitate training process.
+This article proposes a novel training framework based on AR to facilitate training process.
 The framework uses a client-server structure. The two types of clients (i.e. trainers and trainees) are connected through a central server.
 Both of the trainers and the trainees use AR glasses or mobile devices to capture videos of the environment.
-Given the 3D structures of the environment (components involved in training processes), we leverage the novel video object segmentation strategy that we created to track the 3D poses of the components without markers.
+Given the 3D structures of the environment (components involved in training processes), we leverage a novel video object segmentation strategy that we created to track the 3D poses of the components without markers.
 Moving objects are rendered and the frames are sent to the clients and overlaid on the real scenes, i.e. any objects moved by the trainer will be rendered and sent to the trainee, and, similarly, any objects moved by the trainee are rendered and sent to the trainer.
-During this course, the remote trainer guides the trainees in a collaborative way. Therefore, the trainer is able to give customized feedbacks to each trainee, which is how the learning actually takes place.
-We bear in mind the capacity of working with devices without powerful graphics capacity. Tracking and a part of rendering task are offloaded to the server to relieve the computing burden of the AR glasses and mobile devices.
+During this course, the remote trainer guides the trainees in a collaborative way. Therefore, the trainer is able to give customized feedback to each trainee.
+Our goal is to work with devices without powerful graphics capacity. Tracking and a part of the rendering task are offloaded to the server to relieve the computing burden of the AR glasses and mobile devices.
 
 Compared to the existing AR training applications, our proposed framework has three advantages:
 1) It does not require a pre-defined guidance, which makes it suitable to complex tasks;
@@ -45,7 +19,7 @@ Compared to the existing AR training applications, our proposed framework has th
 
 To realize the framework we propose, we have developed two methods: an object video segmentation algorithm and a hybrid remote rendering framework.
 
-The first method is an object video segmentation algorithm used for extracting foreground objects from videos. Our method uses trimaps inferred from background subtraction to represent the foreground-background relationship. The appearance of foreground and background are modelled with Radial Basis Functions initialized from the background subtraction step. Finally, the algorithm Graph Cuts is used to compute a binary mask. Our method is fully automatic, fast, and does not make restrictive assumptions about object motions. In experiments on standard data sets, the proposed approach achieves comparable results to the state-of-the-art video object segmentation methods but our method is much faster.
+The first method is an object video segmentation algorithm used for extracting foreground objects from videos. Our method uses trimaps inferred from background subtraction to represent the foreground-background relationship. The appearance of foreground and background are modelled with Radial Basis Functions and we use graph cuts to compute a binary mask. Our method is fully automatic, fast, and does not make restrictive assumptions about object motions. In experiments on standard data sets, the proposed approach achieves comparable results to the state-of-the-art video object segmentation methods but our method is much faster.
 With this algorithm, we are able to leverage an existing 3D object pose estimation algorithm to perform a markerless
 % wording: it should be markerless instead of marker-less
 3D structure estimation for the models and the environment in a training scenario.

@@ -6,7 +6,7 @@
 In this chapter, we explain the details about our proposed method.
 First of all, we give an overview of the framework, and identify the parts that compose the framework. Moreover, some parts have already been studied in our previous work, while some parts need to be explored in the future.
 Second, we discuss the communication schema design of our framework.
-Third, we demonstrate the for pose estimation of multiple objects, which will be used in our framework.
+Third, we demonstrate the pose estimation of multiple objects, which will be used in our framework.
 Last, the limitations of the proposed framework are discussed.
 
 \section{Overview}
@@ -24,7 +24,7 @@ In the synchronization part, a rendered frame that contains the virtual objects 
 \begin{figure*}[!htbp]
 	\centering
 	\includegraphics[width=\textwidth]{figures/AR-training-overview.pdf}
-	\caption{Overview of the AR training framework. In the circle, the red arrow shows the part performed on the client side, i.e. AR glasses or mobile devices, while the blue arrows show the parts performed on the server side. In this way, the computing cost of the clients is minimized.}
+	\caption{Overview of the AR training framework. In the circle, the red arrow shows the part performed on the client side, i.e., AR glasses or mobile devices, while the blue arrows show the parts performed on the server side. In this way, the computing cost of the clients is minimized.}
 	\label{fig:ar-training-overview}
 \end{figure*}
 
@@ -35,24 +35,24 @@ Last, a rendered frame that contains all the virtual objects are sent to the tra
 
 Next, we discuss the details of each part.
 % first
-First of all, in the video capture part, the videos are captured by the cameras equipped on AR glasses or mobile devices.
+First of all, in the video capture part, the videos are captured by camera equipped AR glasses or mobile devices.
 The cameras are monocular RGB cameras. In every loop, only one frame is captured.
 Moreover, the captured frame is sent to the server for further processing.
 
 % second
-Second, in the video object segmentation part, we use background subtraction to generate a trimap that  roughly segments the frame into three regions: a) a definite foreground; b) a definite background; c) a blended region where pixels are considered as a mixture of foreground and background colors.
+Second, for video object segmentation, we use background subtraction to generate a trimap that  roughly segments the frame into three regions: a) a definite foreground; b) a definite background; c) a blended region where pixels are considered as a mixture of foreground and background colors.
 Then, we use Radial Basis Functions to model color similarity. After this step, every pixel is assigned a value that is the distance between the pixel and the foreground and the background based on a color similarity metric between every pixel in the blended region and the definite regions.
 Furthermore, we clearly label each pixel as foreground or background using superpixles and graph cuts.
 
 % third
-Third, in the pose estimation part, we use a model-based algorithm that uses silhouettes of objects to estimate poses~\cite{tjaden2016}.
+Third, for pose estimation part, we use a model-based algorithm that uses silhouettes of objects to estimate poses~\cite{tjaden2016}.
 It is a real-time algorithm.
-However, the algorithm focus on how to estimating poses with known segmentations. In the original paper, it uses a level-set segmentation method and requires manual initialization of the segmentation.
+However, the algorithm is estimating poses with known segmentations. In the original paper, it uses a level-set segmentation method and requires manual initialization of the segmentation.
 In our framework, we use the video object segmentation method that we have created, which is also real-time.
 
 % four
-Four, AR glasses or mobile devices often has far less powerful graphics capacity than desktop PCs or workstations.
-To minimize the computing costs of the clients, we offload the complex rendering tasks to the server.
+Four, AR glasses or mobile devices often have far less powerful graphics than desktop PCs or workstations.
+To minimize the computing costs on the clients, we offload the complex rendering tasks to the server.
 In the remote rendering method, low-fidelity models are stored on the clients, while high-fidelity models are stored on the server.
 Because each client has its own view, the server must render a frame for each client.
 To save bandwidth and reduce network latency, the server only renders key models. The rendered frames only contain the key model rendering results.
@@ -69,7 +69,7 @@ In this way, the computing cost of the clients is minimized.
 From Figure~\ref{fig:ar-training-overview}, we can see that, to realize the framework, there are three parts that need to be explored.
 % first
 The first is a video object segmentation part. In the work of Tjaden et al.~\cite{tjaden2016}, they use a level-set segmentation method and requires manual initialization of the segmentation.
-Although there are existing automatic algorithms that are able to segment videos without manual initialization~\cite{brox2010,ochs2011,ochs2012,papazoglou2013,wang2015}, some methods are very slow~{brox2010,ochs2011,ochs2012}, some are offline methods that require the availability of the entire video.
+Although there are existing automatic algorithms that are able to segment videos without manual initialization~\cite{brox2010,ochs2011,ochs2012,papazoglou2013,wang2015}, some methods are very slow~\cite{brox2010,ochs2011,ochs2012}, some are offline methods that require the availability of the entire video.
 Thus, we propose a novel video object segmentation method that is real-time and offers online processing.
 This part has been done, and the details about the method can be found in Chapter~\ref{chap:vos}.
 
@@ -106,7 +106,7 @@ The encoding service is a non-blocking service. The control service does not nee
 	\label{fig-comm-schem}
 \end{figure*}
 
-As mentioned in Chapter~\ref{chap:hrr}, our remote rendering method includes two types of models: high-fidelity models and low-fidelity models, where the high-fidelity models are stored on the server side while the low-fidelity models are stored on the client side. Thus, even without the rendering service, the clients are able to render the models if they have the basic rendering capacity.
+As will be discussed in Chapter~\ref{chap:hrr}, our remote rendering method includes two types of models: high-fidelity models and low-fidelity models, where the high-fidelity models are stored on the server side while the low-fidelity models are stored on the client side. Thus, even without the rendering service, the clients are able to render the models if they have the basic rendering capacity.
 In our schema, the only blocking service is the rendering service. For real-time performance, we set a time limit of $1/30$ second for the rendering service. If it does not accomplish the rendering within the time limit, the control service will send the pose estimation result to the clients and let them do the rendering themselves.
 
 \section{Pose Estimation of Multiple Objects}
@@ -143,7 +143,7 @@ Moreover, the synthetic silhouette that is generated with the models can be used
 
 However, the proposed framework still has several limitations.
 First, the 3D models of objects involved in the training must be known beforehand, since the techniques we use in pose estimation are model-based.
-The reason why we use a model-based pose estimation method is that this kind of methods are typically more accurate than those approaches that estimate the 3D structure and pose at the same time. Another advantage of using a model-base pose estimation method is that it does not require the presence of markers.
+The reason why we use a model-based pose estimation method is that this kind of methods are typically more accurate than those approaches that estimate the 3D structure and pose at the same time. Another advantage of using a model-based pose estimation method is that it does not require the presence of markers.
 However, our proposed framework aims at training scenarios. In many cases the CAD models are typically known beforehand, such as in manufacturing and assembly tasks.
 In some other training scenarios, an extra effort is needed to obtain the 3D structures of the objects involved.
 Second, the proposed framework does not work with non-rigid bodies.
