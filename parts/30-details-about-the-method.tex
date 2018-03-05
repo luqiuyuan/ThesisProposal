@@ -136,7 +136,10 @@ Our method uses the work proposed by Tjaden et al.~\cite{tjaden2016} in our pose
 However, the approach uses a level-set segmentation method and requires manual initialization of the segmentation, which limits its usage in real applications.
 We proposed an automatic video object segmentation method, as described in Chapter~\ref{chap:vos}. In our work, the object segmentations are initialized automatically and it works with multiple objects.
 Compared with other state-of-the-art automatic video object segmentation methods, our approach has the advantage that it runs in real-time.
-Moreover, the synthetic silhouette that is generated with the models can be used as a ground truth segmentation, which will be used to improve the foreground and background segmentation results.
+
+In our proposed video object segmentation algorithm, the segmentation is generated from the 2nd frame. Therefore, pose estimation becomes possible from the 2nd frame.
+In an arbitrary frame after the 2nd frame, the poses of all the objects is estimated to obtain the translation and rotation parameters. Because the 3D models of all the tracked objects are known, we can use the silhouettes generated from the 3D models as a ``ground truth''.
+In our proposed video object segmentation algorithm, temporal consistency is considered during the segmenting process. Therefore, the presence of the ``ground truth'' segmentation is expected to improve the segmentation algorithm.
 
 \section{Limitations}
 \label{sec:dm:l}
